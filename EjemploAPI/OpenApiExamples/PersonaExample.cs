@@ -1,5 +1,6 @@
-using Swashbuckle.AspNetCore.Filters;
+
 using MiPrimeraAPI.DAL.Entidades.Persona;
+using Swashbuckle.AspNetCore.Filters;
 
 namespace PrimeraAPI.OpenApiExamples
 {

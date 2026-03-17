@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MiPrimeraAPI.BLL.Persona;
 using MiPrimeraAPI.DAL.Entidades.Persona;
-using Swashbuckle.AspNetCore.Filters;
 
 namespace PrimeraAPI.Controllers
 {
