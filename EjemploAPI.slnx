@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="EjemploAPI.BLL/EjemploAPI.BLL.csproj" />
+  <Project Path="EjemploAPI/EjemploAPI.csproj" />
+</Solution>
