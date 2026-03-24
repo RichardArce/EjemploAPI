@@ -1,4 +1,5 @@
-﻿using MiPrimeraAPI.DAL.Personas;
+﻿using MiPrimeraAPI.DAL.Entidades.External;
+using MiPrimeraAPI.DAL.Personas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,7 +44,30 @@ namespace MiPrimeraAPI.BLL.Persona
             repo.UpdatePersona(id, persona);
         }
 
+        public IEnumerable<ProductResponse> GetProductos()
+        {
+            repo.GetProductos();
+             return repo.GetProductos();
+        }
 
+        public RandomUserResponse GetUser()
+        {
+            var consulta = repo.GetUser();
+
+            if (consulta.Results[0].Email == "evie.thompson@example.com") // Consideracion o validacion de datos, se puede hacer con cualquier dato que se quiera validar
+            {
+                return consulta;
+                //VAlidacion
+            }
+
+            if (consulta.Results[0].Name.First == "Carlos") // Consideracion o validacion de datos, se puede hacer con cualquier dato que se quiera validar
+            {
+                return consulta;
+                //VAlidacion
+            }
+            return consulta;
+                //VAlidacion
+        }
     }
 
 }

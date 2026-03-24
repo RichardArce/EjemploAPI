@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MiPrimeraAPI.BLL.Persona;
+using MiPrimeraAPI.DAL.Entidades.External;
 using MiPrimeraAPI.DAL.Entidades.Persona;
 
 namespace PrimeraAPI.Controllers
@@ -33,7 +34,8 @@ namespace PrimeraAPI.Controllers
         /// <summary>
         /// Get all personas.
         /// </summary>
-        [HttpGet(Name = "GetPersonas")] //El name no es diferenciador
+        /// 
+        /*[HttpGet(Name = "GetPersonas")] //El name no es diferenciador
         [ProducesResponseType(typeof(IEnumerable<Persona>), StatusCodes.Status200OK)]
         public ActionResult<IEnumerable<Persona>> GetPersonas() //Herencia
         {
@@ -42,6 +44,41 @@ namespace PrimeraAPI.Controllers
             return Ok(personas);
 
         }
+
+        [HttpGet(Name = "GetProductos")] //El name no es diferenciador
+        [ProducesResponseType(typeof(IEnumerable<ProductResponse>), StatusCodes.Status200OK)]
+        public ActionResult<IEnumerable<ProductResponse>> GetProductos() //Herencia
+        {
+            var productos = personaServicio.GetProductos();
+
+            return Ok(productos);
+
+        }*/
+
+        [HttpGet(Name = "GetUser")] //El name no es diferenciador
+        [ProducesResponseType(typeof(RandomUserResponse), StatusCodes.Status200OK)]
+        public ActionResult<RandomUserResponse> GetUser() //Herencia
+        {
+            var user = personaServicio.GetUser();
+
+            return Ok(user);
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         /*
         [HttpGet("{posicion}", Name = "GetPersona")] //El name no es diferenciador
         public ActionResult GetPersona(int posicion)

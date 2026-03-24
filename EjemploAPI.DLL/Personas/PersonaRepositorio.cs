@@ -1,4 +1,5 @@
-﻿using MiPrimeraAPI.DAL.Entidades.Persona;
+﻿using MiPrimeraAPI.DAL.Entidades.External;
+using MiPrimeraAPI.DAL.Entidades.Persona;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,12 +45,30 @@ namespace MiPrimeraAPI.DAL.Personas
 
         public IEnumerable<Persona> GetPersonas()
         {
+            return personas;
+        }
+
+        public IEnumerable<ProductResponse> GetProductos()
+        {
             HttpClient httpClient = new HttpClient();
 
-            var prueba = httpClient.GetFromJsonAsync<List<Persona>>("https://localhost:7143/personas"); // Constantes. Configuracion
+            var prueba = httpClient.GetFromJsonAsync<List<ProductResponse>>("https://fakestoreapi.com/products"); // Constantes. Configuracion
+
 
             return prueba.Result;
         }
+
+
+        public RandomUserResponse GetUser()
+        {
+            HttpClient httpClient = new HttpClient();
+
+            var prueba = httpClient.GetFromJsonAsync<RandomUserResponse>("https://randomuser.me/api/"); // Constantes. Configuracion
+
+
+            return prueba.Result;
+        }
+
 
         public void UpdatePersona(int id, Persona persona)
         {
@@ -61,5 +80,9 @@ namespace MiPrimeraAPI.DAL.Personas
 
             personas[id] = persona;
         }
+
+
+
+
     }
 }
